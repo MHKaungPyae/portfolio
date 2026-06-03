@@ -15,7 +15,6 @@ const SKILLS = [
   { name: 'React', level: 75, color: '#61DAFB' },
   { name: 'Machine Learning', level: 75, color: '#FF6F00' },
   { name: 'Dart', level: 80, color: '#0175C2' },
-  { name: 'Firebase', level: 70, color: '#FFCA28' },
 ]
 
 const PROJECTS = [
@@ -36,7 +35,7 @@ const PROJECTS = [
     title: 'Match4U',
     description:
       'A dating app with intelligent matching algorithms, real-time messaging, and a modern, intuitive user interface built for meaningful connections.',
-    tags: ['Flutter', 'Dart', 'Firebase'],
+    tags: ['Flutter', 'Dart'],
     color: 'from-rose-500 to-pink-700',
     github: 'https://github.com/MHKaungPyae/MatchForU',
   },
@@ -319,7 +318,7 @@ function About() {
             </p>
 
             <div className="flex flex-wrap gap-4 pt-2">
-              {['Flutter', 'Python', 'Machine Learning', 'Dart', 'React', 'Firebase', 'NLP'].map(
+              {['Flutter', 'Python', 'Machine Learning', 'Dart', 'React', 'NLP'].map(
                 (tech) => (
                   <span
                     key={tech}
