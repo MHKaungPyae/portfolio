@@ -2,6 +2,10 @@
 
 Personal portfolio website built with **React + Vite + Tailwind CSS**.
 
+## 🚀 Live Site
+
+[https://portfolio-psi-murex-89.vercel.app](https://portfolio-psi-murex-89.vercel.app)
+
 ## 🛠 Tech Stack
 
 - **React** — UI library
