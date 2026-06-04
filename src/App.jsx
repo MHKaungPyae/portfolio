@@ -294,7 +294,7 @@ function About() {
             />
           </div>
 
-          <div className="space-y-5 text-gray-400 leading-relaxed">
+          <div className="space-y-5 text-gray-400 leading-relaxed text-justify">
             <p>
               I'm <strong className="text-white">Min Htet Kaung Pyae</strong>, a{' '}
               <strong className="text-white">Software Engineering</strong> student at{' '}
