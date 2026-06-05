@@ -64,6 +64,11 @@ const CERTIFICATIONS = [
     color: 'from-blue-500 to-cyan-600',
   },
   {
+    name: 'Python Data Structures',
+    href: 'https://www.coursera.org/account/accomplishments/records/NF27HVFWJSS9',
+    color: 'from-violet-500 to-purple-600',
+  },
+  {
     name: 'LFS101: Introduction to Linux',
     href: 'https://www.credly.com/badges/31865e89-fed6-433c-9972-0cf849c1a128/linked_in_profile',
     color: 'from-yellow-500 to-orange-600',
