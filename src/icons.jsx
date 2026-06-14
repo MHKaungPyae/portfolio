@@ -50,6 +50,18 @@ export function ScrollArrow() {
   )
 }
 
+/* Certificate / ribbon icon */
+export function CertificateIcon({ className }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.8} strokeLinecap="round" strokeLinejoin="round">
+      <path d="M4 3h16a1 1 0 011 1v12a1 1 0 01-1 1H4a1 1 0 01-1-1V4a1 1 0 011-1z" />
+      <path d="M8 21h8" />
+      <path d="M12 17v4" />
+      <path d="M9 9l2 2 4-4" />
+    </svg>
+  )
+}
+
 /* Generic social icon wrapper */
 export function SocialIcon({ path, className }) {
   return (
