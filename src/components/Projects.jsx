@@ -1,92 +1,89 @@
+import { useState, useEffect } from 'react'
 import { PROJECTS } from '../data'
 import SectionHeader from './SectionHeader'
 import ScrollReveal from './ScrollReveal'
-import { GITHUB_PATH } from '../icons'
-
-function ProjectCard({ title, description, tags, color, index, github, extraLinks }) {
-  return (
-    <ScrollReveal delay={index * 100}>
-      <div className="group relative bg-zinc-900 rounded-2xl p-6 border border-zinc-800 hover:border-blue-500/40 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-blue-500/15">
-        {/* Card glow on hover */}
-        <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-gradient-to-br from-blue-500/5 to-cyan-500/5 pointer-events-none" />
-
-        {/* Colored top bar */}
-        <div className={`h-2 rounded-t-2xl bg-gradient-to-r ${color} mb-5 -mx-6 -mt-6 relative z-10`} />
-
-        <div className="flex items-center gap-3 mb-4 relative z-10">
-          <div
-            className={`w-10 h-10 rounded-lg bg-gradient-to-br ${color} flex items-center justify-center text-white font-bold text-lg shadow-lg`}
-          >
-            {title[0]}
-          </div>
-          <h3 className="text-lg font-semibold text-white">{title}</h3>
-        </div>
-
-        <p className="text-zinc-400 text-sm leading-relaxed mb-5 min-h-[60px] relative z-10">
-          {description}
-        </p>
-
-        {/* Main GitHub link */}
-        <a
-          href={github}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-flex items-center gap-1.5 text-sm font-medium text-blue-400 hover:text-blue-300 transition-colors mb-3 relative z-10"
-        >
-          <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-            <path d={GITHUB_PATH} />
-          </svg>
-          Source Code
-        </a>
-
-        {/* Extra links */}
-        {extraLinks && extraLinks.length > 0 && (
-          <div className="flex flex-wrap gap-2 mb-3 relative z-10">
-            {extraLinks.map((link) => (
-              <a
-                key={link.label}
-                href={link.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-xs px-2.5 py-1 rounded-lg bg-zinc-800 text-zinc-400 hover:text-blue-300 hover:bg-zinc-700 transition-colors"
-              >
-                {link.label} ↗
-              </a>
-            ))}
-          </div>
-        )}
-
-        <div className="flex flex-wrap gap-2 relative z-10">
-          {tags.map((tag) => (
-            <span
-              key={tag}
-              className="px-2.5 py-1 text-xs font-medium rounded-full bg-zinc-800 text-blue-300 group-hover:bg-zinc-700/80 transition-colors"
-            >
-              {tag}
-            </span>
-          ))}
-        </div>
-      </div>
-    </ScrollReveal>
-  )
-}
+import InteractiveFolderGallery from './ui/interactive-folder-gallery'
 
 export default function Projects() {
+  const [useGallery, setUseGallery] = useState(true)
+  const [hasMotion, setHasMotion] = useState(true)
+
+  // Graceful fallback — if framer-motion fails to load, switch to grid cards
+  useEffect(() => {
+    try {
+      // Verify motion is available
+      if (typeof window !== 'undefined') {
+        setHasMotion(true)
+      }
+    } catch {
+      setHasMotion(false)
+      setUseGallery(false)
+    }
+  }, [])
+
+  // Fallback: static bordered grid (no framer-motion needed)
+  if (!hasMotion || !useGallery) {
+    return (
+      <section id="projects" className="py-24 px-6">
+        <div className="max-w-6xl mx-auto">
+          <ScrollReveal>
+            <SectionHeader title="projects" subtitle="List of my projects" />
+          </ScrollReveal>
+          <div className="grid sm:grid-cols-2 gap-6">
+            {PROJECTS.map((project, i) => (
+              <ScrollReveal key={project.title} delay={i * 100}>
+                <div className="border border-[#abb2bf]/40 flex flex-col group">
+                  <div className={`h-48 bg-gradient-to-br ${project.color} relative overflow-hidden`}>
+                    <div className="absolute inset-0 opacity-20 bg-[#282C33]" />
+                    <div className="absolute bottom-2 left-2 text-xs text-white/60">
+                      {project.title}.png
+                    </div>
+                  </div>
+                  <div className="flex flex-wrap gap-2 p-2 border-b border-[#abb2bf]/40">
+                    {project.tags.slice(0, 4).map((tag) => (
+                      <span key={tag} className="text-base text-[#abb2bf] font-normal">
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                  <div className="flex flex-col gap-4 p-4 flex-1">
+                    <h3 className="text-2xl font-medium text-white">{project.title}</h3>
+                    <p className="text-base text-[#abb2bf] leading-relaxed flex-1">
+                      {project.description}
+                    </p>
+                    <div className="flex flex-wrap gap-4 mt-2">
+                      <a
+                        href={project.github}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="border border-[#C778DD] px-4 py-2 text-white font-medium text-base hover:bg-[#C778DD]/10 transition-colors"
+                      >
+                        {'Live <~>'}
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </ScrollReveal>
+            ))}
+          </div>
+        </div>
+      </section>
+    )
+  }
+
+  // Main: interactive folder gallery
   return (
     <section id="projects" className="py-24 px-6">
       <div className="max-w-6xl mx-auto">
         <ScrollReveal>
-          <SectionHeader
-            title="Featured Projects"
-            subtitle="Click any project to view its source code on GitHub."
-          />
+          <SectionHeader title="projects" subtitle="Click folder to open — drag cards to close" />
         </ScrollReveal>
 
-        <div className="grid sm:grid-cols-2 gap-6 max-w-4xl mx-auto">
-          {PROJECTS.map((project, i) => (
-            <ProjectCard key={project.title} {...project} index={i} />
-          ))}
-        </div>
+        <InteractiveFolderGallery
+          projects={PROJECTS}
+          folderName="Projects.folder"
+          dragHintText="Drag any card down to close"
+        />
       </div>
     </section>
   )

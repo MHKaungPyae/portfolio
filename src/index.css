@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&display=swap');
 @import "tailwindcss";
 
 @layer base {
@@ -6,11 +7,11 @@
   }
 
   body {
-    font-family: 'Open Sans', ui-sans-serif, system-ui, sans-serif;
+    font-family: 'Fira Code', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    font-family: 'Poppins', ui-sans-serif, system-ui, sans-serif;
+    font-family: 'Fira Code', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
   }
 }
 
@@ -27,16 +28,16 @@
   }
 }
 
-/* Slow ambient float for hero gradient orbs */
+/* Slow ambient float for decorative elements */
 @keyframes floatBlob {
   0%, 100% {
     transform: translate(0, 0) scale(1);
   }
   33% {
-    transform: translate(30px, -30px) scale(1.05);
+    transform: translate(20px, -20px) scale(1.03);
   }
   66% {
-    transform: translate(-20px, 20px) scale(0.95);
+    transform: translate(-15px, 15px) scale(0.97);
   }
 }
 
@@ -52,11 +53,35 @@
 
 /* ── Utility classes ── */
 
-.glass {
-  background: rgba(255, 255, 255, 0.04);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.06);
+/* Horizontal line separator (like Figma Line 7 Stroke) */
+.separator-line {
+  height: 1px;
+  background: #abb2bf;
+  flex: 1 0 0;
+  min-width: 1px;
+  opacity: 0.4;
+}
+
+/* Dot grid pattern (5x5 decorative dots, like Figma Dots component) */
+.dot-grid {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.dot-grid-row {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.dot-grid-dot {
+  width: 4px;
+  height: 4px;
+  background: #abb2bf;
+  border-radius: 50%;
+  opacity: 0.5;
 }
 
 /* ── Reduced motion ── */

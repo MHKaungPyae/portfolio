@@ -29,12 +29,12 @@ export const PROJECTS = [
     ],
   },
   {
-    title: 'Match4U',
+    title: 'Medical Citation Chatbot',
     description:
-      'A dating app with intelligent matching algorithms, real-time messaging, and a modern, intuitive user interface built for meaningful connections.',
-    tags: ['Flutter', 'Dart'],
-    color: 'from-rose-500 to-pink-700',
-    github: 'https://github.com/MHKaungPyae/MatchForU',
+      'A generative RAG chatbot that retrieves live data from Wikipedia and OpenFDA, feeds it to a local Ollama LLM, and streams token-by-token cited responses with clickable inline citations to a React frontend.',
+    tags: ['TypeScript', 'Python', 'FastAPI', 'Ollama', 'Supabase', 'Next.js', 'RAG'],
+    color: 'from-violet-500 to-purple-700',
+    github: 'https://github.com/MHKaungPyae/Medical_Citation_Chatbot',
   },
   {
     title: 'Review Summarization',
@@ -114,6 +114,36 @@ export const CERTIFICATIONS = [
     name: 'Supervised Machine Learning: Regression and Classification',
     href: 'https://www.coursera.org/account/accomplishments/verify/I23R5R3OTXU1',
     color: 'from-lime-500 to-green-600',
+  },
+  {
+    name: 'Using Python to Access Web Data',
+    href: 'https://www.coursera.org/account/accomplishments/records/EVP26RPZ8BEG',
+    color: 'from-blue-500 to-indigo-600',
+  },
+  {
+    name: 'Introduction to Subagents',
+    href: 'https://verify.skilljar.com/c/v9rdfcnv32kg',
+    color: 'from-teal-500 to-green-600',
+  },
+  {
+    name: 'Claude 101',
+    href: 'https://verify.skilljar.com/c/inwj6o2h6943',
+    color: 'from-amber-500 to-orange-600',
+  },
+  {
+    name: 'Claude Code 101',
+    href: 'https://verify.skilljar.com/c/imrn5b37nis4',
+    color: 'from-indigo-500 to-purple-600',
+  },
+  {
+    name: 'Introduction to Agent Skills',
+    href: 'https://verify.skilljar.com/c/t42oq8g6qeep',
+    color: 'from-rose-500 to-pink-600',
+  },
+  {
+    name: 'Introduction to Model Context Protocol',
+    href: 'https://verify.skilljar.com/c/a2u7dqaijdij',
+    color: 'from-cyan-500 to-blue-600',
   },
 ]
 
