@@ -4,6 +4,12 @@ import ScrollReveal from './ScrollReveal'
 import { SocialIcon, EmailIcon } from '../icons'
 
 export default function Contact() {
+  const socialColors = {
+    GitHub: { bg: '#333', shadow: 'rgba(51, 51, 51, 0.6)' },
+    LinkedIn: { bg: '#0077b5', shadow: 'rgba(0, 119, 181, 0.6)' },
+    Facebook: { bg: '#1877f2', shadow: 'rgba(24, 119, 242, 0.6)' },
+  }
+
   return (
     <section id="contact" className="py-24 px-6">
       <div className="max-w-6xl mx-auto">
@@ -52,19 +58,22 @@ export default function Contact() {
           </ScrollReveal>
         </div>
 
-        {/* Additional social links */}
+        {/* Social links with glowing icons */}
         <ScrollReveal delay={300}>
-          <div className="flex flex-wrap gap-8 mt-12">
-            {SOCIAL_LINKS.filter((_, i) => i > 0).map(({ label, href, path }) => (
+          <div className="flex flex-wrap justify-center gap-8 mt-12">
+            {SOCIAL_LINKS.map(({ label, href, path }) => (
               <a
                 key={label}
                 href={href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 text-[#abb2bf] hover:text-white transition-colors"
+                className="social-icon"
+                style={{ '--hover-bg': socialColors[label]?.bg, '--hover-shadow': socialColors[label]?.shadow }}
               >
-                <SocialIcon path={path} className="w-8 h-8" />
-                <span className="text-base">{label}</span>
+                <div className="icon-container">
+                  <SocialIcon path={path} className="h-8 w-8 text-white" />
+                </div>
+                <span className="icon-label">{label}</span>
               </a>
             ))}
           </div>
