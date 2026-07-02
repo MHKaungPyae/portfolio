@@ -58,29 +58,30 @@ export default function Skills() {
           <ScrollReveal>
             <SectionHeader title="certifications" />
           </ScrollReveal>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3 max-w-4xl">
-            {CERTIFICATIONS.map((cert, i) => (
-              <ScrollReveal key={cert.name} delay={50 + i * 30}>
+          <ScrollReveal delay={150}>
+            <div className="cert-carousel flex gap-4 overflow-x-auto pb-4 snap-x snap-mandatory">
+              {CERTIFICATIONS.map((cert) => (
                 <a
+                  key={cert.name}
                   href={cert.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-3 px-4 py-3 border border-[#abb2bf]/40 hover:border-[#c778dd]/40 transition-all duration-200 group"
+                  className="cert-card group flex-shrink-0 w-64 snap-start border border-[#abb2bf]/40 hover:border-[#c778dd]/60 p-5 flex flex-col gap-3 transition-all duration-300 hover:-translate-y-1"
                 >
                   <div
-                    className={`w-8 h-8 flex-shrink-0 rounded flex items-center justify-center text-white text-xs font-bold bg-gradient-to-br ${cert.color}`}
+                    className={`w-10 h-10 rounded-lg flex items-center justify-center bg-gradient-to-br ${cert.color}`}
                     aria-hidden="true"
                   >
-                    <CertificateIcon className="w-5 h-5 text-white" />
+                    <CertificateIcon className="w-6 h-6 text-white" />
                   </div>
-                  <span className="text-sm font-normal text-[#abb2bf] group-hover:text-white transition-colors leading-snug">
+                  <span className="text-sm font-medium text-[#abb2bf] group-hover:text-white transition-colors leading-snug line-clamp-2">
                     {cert.name}
                   </span>
-                  <ExternalLinkIcon className="w-3.5 h-3.5 ml-auto text-[#abb2bf] group-hover:text-[#c778dd] flex-shrink-0" />
+                  <ExternalLinkIcon className="w-3.5 h-3.5 text-[#abb2bf] group-hover:text-[#c778dd] mt-auto" />
                 </a>
-              </ScrollReveal>
-            ))}
-          </div>
+              ))}
+            </div>
+          </ScrollReveal>
         </div>
       </div>
     </section>
