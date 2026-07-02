@@ -1,5 +1,6 @@
 import { SOCIAL_LINKS } from '../data'
 import { SocialIcon, ScrollArrow } from '../icons'
+import { Meteors } from '@/components/ui/meteors'
 
 export default function Hero() {
   return (
@@ -7,6 +8,10 @@ export default function Hero() {
       id="hero"
       className="relative min-h-screen flex flex-col justify-center pt-20 pb-8 px-6 overflow-hidden"
     >
+      {/* Meteor background effect */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <Meteors number={20} />
+      </div>
       {/* Decorative elements — subtle dot patterns */}
       <div className="absolute top-32 left-1/2 -translate-x-1/2 hidden lg:block opacity-5">
         <DotGrid rows={5} cols={5} size={84} />
