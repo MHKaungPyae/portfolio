@@ -164,38 +164,6 @@
   opacity: 1;
 }
 
-/* ── Cert Carousel ── */
-
-.cert-carousel {
-  scrollbar-width: thin;
-  scrollbar-color: #abb2bf33 transparent;
-}
-
-.cert-carousel::-webkit-scrollbar {
-  height: 4px;
-}
-
-.cert-carousel::-webkit-scrollbar-track {
-  background: transparent;
-}
-
-.cert-carousel::-webkit-scrollbar-thumb {
-  background: #abb2bf33;
-  border-radius: 2px;
-}
-
-.cert-carousel::-webkit-scrollbar-thumb:hover {
-  background: #abb2bf66;
-}
-
-.cert-card {
-  background: rgba(255, 255, 255, 0.02);
-}
-
-.cert-card:hover {
-  background: rgba(255, 255, 255, 0.05);
-}
-
 /* ── Reduced motion ── */
 
 @media (prefers-reduced-motion: reduce) {
