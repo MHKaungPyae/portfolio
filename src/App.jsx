@@ -9,7 +9,7 @@ import SideSocial from './components/SideSocial'
 
 export default function App() {
   return (
-    <div className="bg-[#282C33] text-[#abb2bf] min-h-screen">
+    <div className="bg-black text-[#abb2bf] min-h-screen">
       <SideSocial />
       <Navbar />
       <main>

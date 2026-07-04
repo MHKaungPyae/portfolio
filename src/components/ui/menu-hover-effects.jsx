@@ -17,7 +17,7 @@ export default function NavMenu({ items = [], activeItem = 'home' }) {
   return (
     <nav
       className={`fixed top-0 inset-x-0 z-50 transition-all duration-300 ${
-        scrolled ? 'bg-[#282C33]/95 backdrop-blur-sm shadow-lg shadow-black/20' : 'bg-[#282C33]'
+        scrolled ? 'bg-black/95 backdrop-blur-sm shadow-lg shadow-black/20' : 'bg-black'
       }`}
     >
       <div className="max-w-6xl mx-auto flex items-center justify-between h-16 px-6">
@@ -63,7 +63,7 @@ export default function NavMenu({ items = [], activeItem = 'home' }) {
                   >
                     {/* Link text */}
                     <span
-                      className={`relative z-10 block font-semibold transition-colors duration-300 group-hover:text-[#282C33] text-base py-2 px-3 lg:px-4 ${
+                      className={`relative z-10 block font-semibold transition-colors duration-300 group-hover:text-black text-base py-2 px-3 lg:px-4 ${
                         isActive ? 'text-[#c778dd]' : 'text-[#abb2bf]'
                       }`}
                     >
@@ -89,7 +89,7 @@ export default function NavMenu({ items = [], activeItem = 'home' }) {
           isMenuOpen ? 'max-h-screen opacity-100' : 'max-h-0 opacity-0'
         }`}
       >
-        <ul className="flex flex-col items-center gap-6 py-8 bg-[#282C33] border-t border-[#abb2bf]/20">
+        <ul className="flex flex-col items-center gap-6 py-8 bg-black border-t border-[#abb2bf]/20">
           {items.map((item) => {
             const key = item.label.toLowerCase()
             const isActive = activeItem === key
@@ -101,7 +101,7 @@ export default function NavMenu({ items = [], activeItem = 'home' }) {
                   className="relative inline-block group"
                 >
                   <span
-                    className={`relative z-10 block font-semibold transition-colors duration-300 group-hover:text-[#282C33] text-xl py-2 px-4 ${
+                    className={`relative z-10 block font-semibold transition-colors duration-300 group-hover:text-black text-xl py-2 px-4 ${
                       isActive ? 'text-[#c778dd]' : 'text-[#abb2bf]'
                     }`}
                   >
