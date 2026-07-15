@@ -40,6 +40,17 @@ export default function Projects() {
                     >
                       {'Live <~>'}
                     </a>
+                    {project.extraLinks?.map((link) => (
+                      <a
+                        key={link.label}
+                        href={link.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="border border-[#abb2bf]/40 px-4 py-2 text-[#abb2bf] font-medium text-base hover:border-[#c778dd]/40 hover:text-white transition-colors"
+                      >
+                        {link.label}
+                      </a>
+                    ))}
                   </div>
                 </div>
               </div>

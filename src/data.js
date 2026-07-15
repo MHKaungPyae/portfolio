@@ -16,17 +16,24 @@ export const SKILLS = [
 
 export const PROJECTS = [
   {
-    title: 'TripNest',
+    title: 'TripNest (User App)',
     description:
       'An event booking app featuring AI-powered sentiment analysis and text summarization models, plus an integrated chatbot for seamless user assistance.',
     tags: ['Flutter', 'Python', 'AI/ML', 'Chatbot', 'NLP'],
     color: 'from-emerald-500 to-teal-700',
     github: 'https://github.com/linmyatoo/TripNest_user',
     extraLinks: [
-      { label: 'Admin Panel', href: 'https://github.com/linmyatoo/TripNest_admin' },
-      { label: 'Summarization Model', href: 'https://github.com/MHKaungPyae/Review-Summarization' },
       { label: 'Sentiment Analysis', href: 'https://github.com/MHKaungPyae/Sentiment-analysis' },
+      { label: 'Review Summarization', href: 'https://github.com/MHKaungPyae/Review-Summarization' },
     ],
+  },
+  {
+    title: 'TripNest (Admin Panel)',
+    description:
+      'Admin dashboard for managing events, bookings, and user data for the TripNest event booking platform.',
+    tags: ['Flutter', 'Firebase', 'Admin Dashboard'],
+    color: 'from-green-500 to-emerald-700',
+    github: 'https://github.com/linmyatoo/TripNest_admin',
   },
   {
     title: 'Medical Citation Chatbot',
