@@ -39,6 +39,7 @@ export const PROJECTS = [
       'A generative RAG chatbot that retrieves live data from Wikipedia and OpenFDA, feeds it to a local Ollama LLM, and streams token-by-token cited responses with clickable inline citations to a React frontend.',
     tags: ['TypeScript', 'Python', 'FastAPI', 'Ollama', 'Supabase', 'Next.js', 'RAG'],
     color: 'from-violet-500 to-purple-700',
+    image: '/images/projects/medical-citation-chatbot.png',
     github: 'https://github.com/MHKaungPyae/Medical_Citation_Chatbot',
   },
   {
