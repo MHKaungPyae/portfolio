@@ -25,9 +25,9 @@ export const PROJECTS = [
     github: 'https://github.com/linmyatoo/TripNest_user',
   },
   {
-    title: 'TripNest (Admin Panel)',
+    title: 'TripNest (Creator App)',
     description:
-      'Admin dashboard for managing events, bookings, and user data for the TripNest event booking platform.',
+      'Creator dashboard for managing events, bookings, and user data for the TripNest event booking platform.',
     tags: ['Flutter', 'Firebase', 'Admin Dashboard'],
     color: 'from-green-500 to-emerald-700',
     image: '/images/projects/tripnest-admin.png',
