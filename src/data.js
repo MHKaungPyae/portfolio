@@ -23,10 +23,6 @@ export const PROJECTS = [
     color: 'from-emerald-500 to-teal-700',
     image: '/images/projects/tripnest-user.png',
     github: 'https://github.com/linmyatoo/TripNest_user',
-    extraLinks: [
-      { label: 'Sentiment Analysis', href: 'https://github.com/MHKaungPyae/Sentiment-analysis' },
-      { label: 'Review Summarization', href: 'https://github.com/MHKaungPyae/Review-Summarization' },
-    ],
   },
   {
     title: 'TripNest (Admin Panel)',
