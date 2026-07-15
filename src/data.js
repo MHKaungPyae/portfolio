@@ -21,6 +21,7 @@ export const PROJECTS = [
       'An event booking app featuring AI-powered sentiment analysis and text summarization models, plus an integrated chatbot for seamless user assistance.',
     tags: ['Flutter', 'Python', 'AI/ML', 'Chatbot', 'NLP'],
     color: 'from-emerald-500 to-teal-700',
+    image: '/images/projects/tripnest-user.png',
     github: 'https://github.com/linmyatoo/TripNest_user',
     extraLinks: [
       { label: 'Sentiment Analysis', href: 'https://github.com/MHKaungPyae/Sentiment-analysis' },
@@ -33,6 +34,7 @@ export const PROJECTS = [
       'Admin dashboard for managing events, bookings, and user data for the TripNest event booking platform.',
     tags: ['Flutter', 'Firebase', 'Admin Dashboard'],
     color: 'from-green-500 to-emerald-700',
+    image: '/images/projects/tripnest-admin.png',
     github: 'https://github.com/linmyatoo/TripNest_admin',
   },
   {

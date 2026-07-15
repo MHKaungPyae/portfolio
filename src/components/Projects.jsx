@@ -14,10 +14,20 @@ export default function Projects() {
             <ScrollReveal key={project.title} delay={i * 100}>
               <div className="border border-[#abb2bf]/40 flex flex-col group">
                 <div className={`h-48 bg-gradient-to-br ${project.color} relative overflow-hidden`}>
-                  <div className="absolute inset-0 opacity-20 bg-[#282C33]" />
-                  <div className="absolute bottom-2 left-2 text-xs text-white/60">
-                    {project.title}.png
-                  </div>
+                  {project.image ? (
+                    <img
+                      src={project.image}
+                      alt={project.title}
+                      className="w-full h-full object-cover"
+                    />
+                  ) : (
+                    <>
+                      <div className="absolute inset-0 opacity-20 bg-[#282C33]" />
+                      <div className="absolute bottom-2 left-2 text-xs text-white/60">
+                        {project.title}.png
+                      </div>
+                    </>
+                  )}
                 </div>
                 <div className="flex flex-wrap gap-2 p-2 border-b border-[#abb2bf]/40">
                   {project.tags.slice(0, 4).map((tag) => (
