@@ -58,25 +58,36 @@ export default function Skills() {
           <ScrollReveal>
             <SectionHeader title="certifications" />
           </ScrollReveal>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3 max-w-4xl">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 max-w-5xl">
             {CERTIFICATIONS.map((cert, i) => (
               <ScrollReveal key={cert.name} delay={50 + i * 30}>
                 <a
                   href={cert.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-3 px-4 py-3 border border-[#abb2bf]/40 hover:border-[#c778dd]/40 transition-all duration-200 group"
+                  className="block border border-[#abb2bf]/40 hover:border-[#c778dd]/40 transition-all duration-200 group overflow-hidden"
                 >
-                  <div
-                    className={`w-8 h-8 flex-shrink-0 rounded flex items-center justify-center text-white text-xs font-bold bg-gradient-to-br ${cert.color}`}
-                    aria-hidden="true"
-                  >
-                    <CertificateIcon className="w-5 h-5 text-white" />
+                  {cert.file && (
+                    <div className="w-full aspect-[4/3] overflow-hidden bg-[#1a1b26]">
+                      <img
+                        src={cert.file}
+                        alt={cert.name}
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                      />
+                    </div>
+                  )}
+                  <div className="px-4 py-3 flex items-center gap-3">
+                    <div
+                      className={`w-7 h-7 flex-shrink-0 rounded flex items-center justify-center text-white text-xs font-bold bg-gradient-to-br ${cert.color}`}
+                      aria-hidden="true"
+                    >
+                      <CertificateIcon className="w-4 h-4 text-white" />
+                    </div>
+                    <span className="text-sm font-normal text-[#abb2bf] group-hover:text-white transition-colors leading-snug line-clamp-2">
+                      {cert.name}
+                    </span>
+                    <ExternalLinkIcon className="w-3.5 h-3.5 ml-auto text-[#abb2bf] group-hover:text-[#c778dd] flex-shrink-0" />
                   </div>
-                  <span className="text-sm font-normal text-[#abb2bf] group-hover:text-white transition-colors leading-snug">
-                    {cert.name}
-                  </span>
-                  <ExternalLinkIcon className="w-3.5 h-3.5 ml-auto text-[#abb2bf] group-hover:text-[#c778dd] flex-shrink-0" />
                 </a>
               </ScrollReveal>
             ))}
