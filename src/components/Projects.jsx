@@ -13,12 +13,12 @@ export default function Projects() {
           {PROJECTS.map((project, i) => (
             <ScrollReveal key={project.title} delay={i * 100}>
               <div className="border border-[#abb2bf]/40 flex flex-col group">
-                <div className={`h-48 bg-gradient-to-br ${project.color} relative overflow-hidden`}>
+                <div className={`h-56 bg-gradient-to-br ${project.color} relative overflow-hidden`}>
                   {project.image ? (
                     <img
                       src={project.image}
                       alt={project.title}
-                      className="w-full h-full object-cover"
+                      className="w-full h-full object-cover object-top"
                     />
                   ) : (
                     <>
