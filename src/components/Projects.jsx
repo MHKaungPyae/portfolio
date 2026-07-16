@@ -1,6 +1,7 @@
 import { PROJECTS } from '../data'
 import SectionHeader from './SectionHeader'
 import ScrollReveal from './ScrollReveal'
+import { GITHUB_PATH, SocialIcon } from '../icons'
 
 export default function Projects() {
   return (
@@ -46,9 +47,10 @@ export default function Projects() {
                       href={project.github}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="border border-[#C778DD] px-4 py-2 text-white font-medium text-base hover:bg-[#C778DD]/10 transition-colors"
+                      className="border border-[#C778DD] px-4 py-2 text-white font-medium text-base hover:bg-[#C778DD]/10 transition-colors flex items-center gap-2"
                     >
-                      {'Live <~>'}
+                      <SocialIcon path={GITHUB_PATH} className="w-5 h-5" />
+                      GitHub
                     </a>
                     {project.extraLinks?.map((link) => (
                       <a
