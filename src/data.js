@@ -48,7 +48,8 @@ export const PROJECTS = [
       'An NLP model that automatically summarizes user reviews using advanced text summarization techniques, integrated into the TripNest platform.',
     tags: ['Python', 'NLP', 'Machine Learning', 'Transformers'],
     color: 'from-cyan-500 to-blue-700',
-    github: 'https://github.com/MHKaungPyae/Review-Summarization',
+    image: '/images/projects/portfolio_comparison_1.png',
+    github: 'https://github.com/MHKaungPyae/Review_Summarization',
   },
   {
     title: 'Sentiment Analysis',
@@ -56,7 +57,8 @@ export const PROJECTS = [
       'An AI model that classifies user sentiment from text data, powering intelligent insights within the TripNest event booking ecosystem.',
     tags: ['Python', 'NLP', 'Machine Learning', 'Sentiment'],
     color: 'from-amber-500 to-yellow-700',
-    github: 'https://github.com/MHKaungPyae/Sentiment-analysis',
+    image: '/images/projects/confusion_matrix.png',
+    github: 'https://github.com/MHKaungPyae/Sentiment_Analysis',
   },
 ]
 
