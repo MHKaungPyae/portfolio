@@ -180,3 +180,19 @@
     scroll-behavior: auto !important;
   }
 }
+
+/* ── Project Carousel ── */
+
+.project-carousel {
+  padding-bottom: 50px !important;
+}
+
+.project-carousel .swiper-pagination-bullet {
+  background: #abb2bf;
+  opacity: 0.5;
+}
+
+.project-carousel .swiper-pagination-bullet-active {
+  background: #C778DD;
+  opacity: 1;
+}
