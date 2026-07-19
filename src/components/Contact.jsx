@@ -1,50 +1,75 @@
 import { SOCIAL_LINKS } from '../data'
 import SectionHeader from './SectionHeader'
-import ScrollReveal from './ScrollReveal'
+import GlassCard from './ui/GlassCard'
 import { SocialIcon } from '../icons'
+import { Mail, MapPin, ExternalLink } from 'lucide-react'
 
 export default function Contact() {
-  const socialColors = {
-    GitHub: { bg: '#333', shadow: 'rgba(51, 51, 51, 0.6)' },
-    LinkedIn: { bg: '#0077b5', shadow: 'rgba(0, 119, 181, 0.6)' },
-    Facebook: { bg: '#1877f2', shadow: 'rgba(24, 119, 242, 0.6)' },
-    Gmail: { bg: '#ea4335', shadow: 'rgba(234, 67, 53, 0.6)' },
-  }
-
   return (
-    <section id="contact" className="py-24 px-6">
-      <div className="max-w-6xl mx-auto">
-        <ScrollReveal>
-          <SectionHeader title="contacts" />
-        </ScrollReveal>
+    <section id="contact" className="py-24 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+      <div className="absolute inset-0 -z-10 bg-black pointer-events-none" />
 
-        <ScrollReveal delay={100}>
-          <p className="text-[#abb2bf] text-base font-medium leading-relaxed mb-12">
-            I'm interested in freelance opportunities. However, if you have other request
-            or question, don't hesitate to contact me.
-          </p>
-        </ScrollReveal>
+      <div className="max-w-7xl mx-auto">
+        <SectionHeader
+          title="Get In Touch"
+          subtitle="Have a project in mind? Let's work together!"
+        />
 
-        {/* Social links with glowing icons */}
-        <ScrollReveal delay={200}>
-          <div className="flex flex-wrap justify-center gap-8">
-            {SOCIAL_LINKS.map(({ label, href, path }) => (
+        <div className="max-w-2xl mx-auto">
+          <GlassCard hover>
+            <p className="section-label mb-2">Contact Info</p>
+            <h3 className="text-2xl font-bold text-white mb-4">Let's Connect</h3>
+            <p className="text-gray-400 text-sm mb-6 leading-relaxed">
+              I'm interested in freelance opportunities and collaborative projects.
+              Whether you have a question or just want to say hi, feel free to reach out!
+            </p>
+
+            <div className="space-y-4">
               <a
-                key={label}
-                href={href}
-                target={label === 'Gmail' ? undefined : '_blank'}
-                rel={label === 'Gmail' ? undefined : 'noopener noreferrer'}
-                className="social-icon"
-                style={{ '--hover-bg': socialColors[label]?.bg, '--hover-shadow': socialColors[label]?.shadow }}
+                href="mailto:mhkp765@gmail.com"
+                className="flex items-center gap-3 p-3 rounded-xl bg-gray-900 border border-gray-800 hover:border-primary/50 transition-colors group"
               >
-                <div className="icon-container">
-                  <SocialIcon path={path} className="h-8 w-8 text-white" />
+                <div className="w-10 h-10 rounded-lg bg-primary/20 flex items-center justify-center">
+                  <Mail className="w-5 h-5 text-primary" />
                 </div>
-                <span className="icon-label">{label}</span>
+                <div className="flex-1">
+                  <p className="text-xs text-gray-500">Email</p>
+                  <p className="text-sm font-medium text-white">mhkp765@gmail.com</p>
+                </div>
+                <ExternalLink className="w-4 h-4 text-gray-600 group-hover:text-primary transition-colors" />
               </a>
-            ))}
-          </div>
-        </ScrollReveal>
+
+              <div className="flex items-center gap-3 p-3 rounded-xl bg-gray-900 border border-gray-800">
+                <div className="w-10 h-10 rounded-lg bg-accent/20 flex items-center justify-center">
+                  <MapPin className="w-5 h-5 text-accent" />
+                </div>
+                <div>
+                  <p className="text-xs text-gray-500">Location</p>
+                  <p className="text-sm font-medium text-white">Mae Fah Luang University, Thailand</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Social Links */}
+            <div className="mt-6 pt-6 border-t border-gray-800">
+              <p className="text-xs text-gray-500 mb-3">Follow me on</p>
+              <div className="flex gap-3">
+                {SOCIAL_LINKS.filter(s => s.label !== 'Gmail').map(({ label, href, path }) => (
+                  <a
+                    key={label}
+                    href={href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={label}
+                    className="w-10 h-10 rounded-lg bg-gray-900 flex items-center justify-center text-gray-500 hover:bg-primary hover:text-white transition-all"
+                  >
+                    <SocialIcon path={path} className="w-5 h-5" />
+                  </a>
+                ))}
+              </div>
+            </div>
+          </GlassCard>
+        </div>
       </div>
     </section>
   )

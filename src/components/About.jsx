@@ -1,112 +1,73 @@
-import { useState } from 'react'
-import profileImg from '../assets/profile.jpg'
 import SectionHeader from './SectionHeader'
-import ScrollReveal from './ScrollReveal'
+import GlassCard from './ui/GlassCard'
+import { MapPin, Briefcase } from 'lucide-react'
 
 export default function About() {
-  const [imgError, setImgError] = useState(false)
-
   return (
-    <section id="about" className="py-24 px-6">
-      <div className="max-w-6xl mx-auto">
-        <ScrollReveal>
-          <SectionHeader title="about-me" />
-        </ScrollReveal>
+    <section id="about" className="py-24 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+      {/* Background */}
+      <div className="absolute inset-0 -z-10 bg-black pointer-events-none" />
 
-        <div className="flex flex-col lg:flex-row items-start gap-12 lg:gap-16">
-          {/* Left: Text content */}
-          <ScrollReveal origin="left" delay={100} className="flex-1">
-            <div className="space-y-5 text-[#abb2bf] text-base leading-relaxed">
-              <p>
-                Hello, I'm{' '}
-                <strong className="text-white font-medium">Min Htet Kaung Pyae</strong>!
-              </p>
-              <p>
-                I'm a <strong className="text-white font-medium">Software Engineering</strong> student
-                at <strong className="text-white font-medium">Mae Fah Luang University</strong> in
-                Thailand. I'm passionate about building intelligent applications and I'm currently{' '}
-                <strong className="text-white font-medium">open to job opportunities</strong>.
-              </p>
-              <p>
-                I've developed two AI models — a{' '}
-                <strong className="text-white font-medium">sentiment analysis</strong> model and a{' '}
-                <strong className="text-white font-medium">text summarization</strong> model — both
-                integrated into <strong className="text-white font-medium">TripNest</strong>, an event
-                booking app. I also built <strong className="text-white font-medium">Match4U</strong>,
-                a dating app with smart matching and real-time messaging.
-              </p>
-              <p>
-                I build with{' '}
-                <strong className="text-white font-medium">Flutter</strong>,{' '}
-                <strong className="text-white font-medium">Python</strong>,{' '}
-                <strong className="text-white font-medium">Dart</strong>, and{' '}
-                <strong className="text-white font-medium">React</strong>, and hold multiple
-                certificates in AI and Machine Learning.
-              </p>
+      <div className="max-w-7xl mx-auto">
+        <SectionHeader
+          title="About Me"
+          subtitle="Get to know me better"
+          align="left"
+        />
 
-              {/* Read more button */}
-              <a
-                href="#skills"
-                className="inline-block border border-[#C778DD] px-4 py-2 text-white font-medium text-base hover:bg-[#C778DD]/10 transition-colors duration-200 mt-2"
-              >
-                Read more →
-              </a>
-            </div>
-          </ScrollReveal>
-
-          {/* Right: Profile image with decorative elements */}
-          <ScrollReveal origin="right" delay={200} className="lg:w-auto flex-shrink-0">
-            <div className="relative">
-              {/* Decorative dots top-left */}
-              <div className="absolute -top-3 -left-3 opacity-40" aria-hidden="true">
-                <DotGridSmall />
-              </div>
-
-              {/* Profile image */}
-              <div className="relative">
-                {/* Border accent behind image */}
-                <div className="absolute -inset-1 border border-[#C778DD]/30" />
-
-                {imgError ? (
-                  <div className="w-80 h-80 flex items-center justify-center border border-[#abb2bf]/40 text-[#abb2bf]">
-                    <span className="text-sm">Photo unavailable</span>
-                  </div>
-                ) : (
-                  <img
-                    src={profileImg}
-                    alt="Min Htet Kaung Pyae"
-                    className="relative w-80 h-80 object-cover"
-                    onError={() => setImgError(true)}
-                  />
-                )}
-              </div>
-
-              {/* Decorative dots bottom-right */}
-              <div className="absolute -bottom-3 -right-3 opacity-40" aria-hidden="true">
-                <DotGridSmall />
-              </div>
-            </div>
-
-            {/* Bottom line decoration */}
-            <div className="mt-6 w-full h-px bg-[#abb2bf]/30" />
-          </ScrollReveal>
+        {/* Stats Row */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-16">
+          <GlassCard className="text-center">
+            <div className="text-3xl font-bold text-primary mb-1">2+</div>
+            <div className="text-sm text-gray-400">Years Coding</div>
+          </GlassCard>
+          <GlassCard className="text-center">
+            <div className="text-3xl font-bold text-primary mb-1">5+</div>
+            <div className="text-sm text-gray-400">Projects Built</div>
+          </GlassCard>
+          <GlassCard className="text-center">
+            <div className="text-3xl font-bold text-primary mb-1">18+</div>
+            <div className="text-sm text-gray-400">Certifications</div>
+          </GlassCard>
+          <GlassCard className="text-center">
+            <div className="text-3xl font-bold text-primary mb-1">2+</div>
+            <div className="text-sm text-gray-400">AI Models</div>
+          </GlassCard>
         </div>
+
+        <GlassCard hover>
+          <div className="flex items-center gap-3 mb-6">
+            <div className="w-10 h-10 rounded-xl bg-primary/20 flex items-center justify-center">
+              <Briefcase className="w-5 h-5 text-primary" />
+            </div>
+            <h3 className="text-xl font-bold text-white">Who I Am</h3>
+          </div>
+
+          <div className="space-y-4 text-gray-400 text-sm leading-relaxed">
+            <p>
+              Hello! I'm <strong className="text-white">Min Htet Kaung Pyae</strong>, a
+              passionate Software Engineering student at{' '}
+              <strong className="text-white">Mae Fah Luang University</strong> in Thailand.
+            </p>
+            <p>
+              I specialize in building intelligent applications using{' '}
+              <strong className="text-primary">Flutter</strong>,{' '}
+              <strong className="text-primary">Python</strong>, and{' '}
+              <strong className="text-primary">React</strong>. I've developed AI models for
+              sentiment analysis and text summarization, both integrated into production apps.
+            </p>
+            <p>
+              Currently <strong className="text-accent">open to job opportunities</strong> where
+              I can contribute to innovative projects and grow as a developer.
+            </p>
+          </div>
+
+          <div className="mt-6 flex items-center gap-2 text-sm text-gray-500">
+            <MapPin className="w-4 h-4 text-primary" />
+            <span>Mae Fah Luang University, Thailand</span>
+          </div>
+        </GlassCard>
       </div>
     </section>
-  )
-}
-
-/** Small 5x5 decorative dot grid */
-function DotGridSmall() {
-  return (
-    <div className="dot-grid" style={{ width: 84, height: 84 }} aria-hidden="true">
-      {Array.from({ length: 5 }).map((_, r) => (
-        <div key={r} className="dot-grid-row">
-          {Array.from({ length: 5 }).map((_, c) => (
-            <div key={c} className="dot-grid-dot" />
-          ))}
-        </div>
-      ))}
-    </div>
   )
 }

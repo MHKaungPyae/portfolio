@@ -1,17 +1,12 @@
+import { GITHUB_PATH } from './icons'
+
 export const NAV_ITEMS = [
   { label: 'Home', href: '#hero' },
   { label: 'About', href: '#about' },
   { label: 'Skills', href: '#skills' },
+  { label: 'Certificates', href: '#certifications' },
   { label: 'Projects', href: '#projects' },
   { label: 'Contact', href: '#contact' },
-]
-
-export const SKILLS = [
-  { name: 'Flutter', level: 85, color: '#02569B' },
-  { name: 'Python', level: 80, color: '#3776AB' },
-  { name: 'React', level: 75, color: '#61DAFB' },
-  { name: 'Machine Learning', level: 75, color: '#FF6F00' },
-  { name: 'Dart', level: 80, color: '#0175C2' },
 ]
 
 export const PROJECTS = [
@@ -68,108 +63,126 @@ export const CERTIFICATIONS = [
     href: 'https://www.coursera.org/account/accomplishments/records/39Z2J8HX6EXW',
     file: '/certificates/programming-for-everybody-python.png',
     color: 'from-blue-500 to-cyan-600',
+    category: 'python',
   },
   {
     name: 'Python Data Structures',
     href: 'https://www.coursera.org/account/accomplishments/records/NF27HVFWJSS9',
     file: '/certificates/python-data-structures.png',
     color: 'from-violet-500 to-purple-600',
-  },
-  {
-    name: 'LFS101: Introduction to Linux',
-    href: 'https://www.credly.com/badges/31865e89-fed6-433c-9972-0cf849c1a128/linked_in_profile',
-    file: '/certificates/introduction-to-linux.png',
-    color: 'from-yellow-500 to-orange-600',
-  },
-  {
-    name: 'Natural Language Processing with Classification and Vector Spaces',
-    href: 'https://www.coursera.org/account/accomplishments/records/61G4KD6SN3AX',
-    file: '/certificates/nlp-classification-vector-spaces.png',
-    color: 'from-green-500 to-emerald-600',
-  },
-  {
-    name: 'Sequence Models',
-    href: 'https://www.coursera.org/account/accomplishments/records/HFTY2KWU2QDT',
-    file: '/certificates/sequence-models.png',
-    color: 'from-purple-500 to-violet-600',
-  },
-  {
-    name: 'AI Fluency Framework & Foundations',
-    href: 'https://verify.skilljar.com/c/owz23647zxip',
-    file: '/certificates/ai-fluency-framework-foundations.png',
-    color: 'from-pink-500 to-rose-600',
-  },
-  {
-    name: 'Structuring Machine Learning Projects',
-    href: 'https://www.coursera.org/account/accomplishments/records/XZKQC2K3DSZY',
-    file: '/certificates/structuring-ml-projects.png',
-    color: 'from-indigo-500 to-blue-600',
-  },
-  {
-    name: 'Improving Deep Neural Networks',
-    href: 'https://www.coursera.org/account/accomplishments/verify/8JC9DJGQM891',
-    file: '/certificates/improving-deep-neural-networks.png',
-    color: 'from-red-500 to-pink-600',
-  },
-  {
-    name: 'Neural Networks and Deep Learning',
-    href: 'https://www.coursera.org/account/accomplishments/records/E2X0YU1UU02O',
-    file: '/certificates/neural-networks-deep-learning.png',
-    color: 'from-teal-500 to-cyan-600',
-  },
-  {
-    name: 'Machine Learning',
-    href: 'https://www.coursera.org/account/accomplishments/specialization/certificate/KH2XWHB2JD15',
-    file: '/certificates/machine-learning.png',
-    color: 'from-orange-500 to-amber-600',
-  },
-  {
-    name: 'Advanced Learning Algorithms',
-    href: 'https://www.coursera.org/account/accomplishments/records/B5L8ZFLB4EA2',
-    file: '/certificates/advanced-learning-algorithms.png',
-    color: 'from-sky-500 to-blue-600',
-  },
-  {
-    name: 'Supervised Machine Learning: Regression and Classification',
-    href: 'https://www.coursera.org/account/accomplishments/verify/I23R5R3OTXU1',
-    file: '/certificates/supervised-ml-regression-classification.png',
-    color: 'from-lime-500 to-green-600',
+    category: 'python',
   },
   {
     name: 'Using Python to Access Web Data',
     href: 'https://www.coursera.org/account/accomplishments/records/EVP26RPZ8BEG',
     file: '/certificates/python-web-data.png',
     color: 'from-blue-500 to-indigo-600',
+    category: 'python',
+  },
+  {
+    name: 'LFS101: Introduction to Linux',
+    href: 'https://www.credly.com/badges/31865e89-fed6-433c-9972-0cf849c1a128/linked_in_profile',
+    file: '/certificates/introduction-to-linux.png',
+    color: 'from-yellow-500 to-orange-600',
+    category: 'tools',
+  },
+  {
+    name: 'Natural Language Processing with Classification and Vector Spaces',
+    href: 'https://www.coursera.org/account/accomplishments/records/61G4KD6SN3AX',
+    file: '/certificates/nlp-classification-vector-spaces.png',
+    color: 'from-green-500 to-emerald-600',
+    category: 'ml',
+  },
+  {
+    name: 'Sequence Models',
+    href: 'https://www.coursera.org/account/accomplishments/records/HFTY2KWU2QDT',
+    file: '/certificates/sequence-models.png',
+    color: 'from-purple-500 to-violet-600',
+    category: 'ml',
+  },
+  {
+    name: 'Structuring Machine Learning Projects',
+    href: 'https://www.coursera.org/account/accomplishments/records/XZKQC2K3DSZY',
+    file: '/certificates/structuring-ml-projects.png',
+    color: 'from-indigo-500 to-blue-600',
+    category: 'ml',
+  },
+  {
+    name: 'Improving Deep Neural Networks',
+    href: 'https://www.coursera.org/account/accomplishments/verify/8JC9DJGQM891',
+    file: '/certificates/improving-deep-neural-networks.png',
+    color: 'from-red-500 to-pink-600',
+    category: 'ml',
+  },
+  {
+    name: 'Neural Networks and Deep Learning',
+    href: 'https://www.coursera.org/account/accomplishments/records/E2X0YU1UU02O',
+    file: '/certificates/neural-networks-deep-learning.png',
+    color: 'from-teal-500 to-cyan-600',
+    category: 'ml',
+  },
+  {
+    name: 'Machine Learning',
+    href: 'https://www.coursera.org/account/accomplishments/specialization/certificate/KH2XWHB2JD15',
+    file: '/certificates/machine-learning.png',
+    color: 'from-orange-500 to-amber-600',
+    category: 'ml',
+  },
+  {
+    name: 'Advanced Learning Algorithms',
+    href: 'https://www.coursera.org/account/accomplishments/records/B5L8ZFLB4EA2',
+    file: '/certificates/advanced-learning-algorithms.png',
+    color: 'from-sky-500 to-blue-600',
+    category: 'ml',
+  },
+  {
+    name: 'Supervised Machine Learning: Regression and Classification',
+    href: 'https://www.coursera.org/account/accomplishments/verify/I23R5R3OTXU1',
+    file: '/certificates/supervised-ml-regression-classification.png',
+    color: 'from-lime-500 to-green-600',
+    category: 'ml',
+  },
+  {
+    name: 'AI Fluency Framework & Foundations',
+    href: 'https://verify.skilljar.com/c/owz23647zxip',
+    file: '/certificates/ai-fluency-framework-foundations.png',
+    color: 'from-pink-500 to-rose-600',
+    category: 'agents',
   },
   {
     name: 'Introduction to Subagents',
     href: 'https://verify.skilljar.com/c/v9rdfcnv32kg',
     file: '/certificates/introduction-to-subagents.png',
     color: 'from-teal-500 to-green-600',
+    category: 'agents',
   },
   {
     name: 'Claude 101',
     href: 'https://verify.skilljar.com/c/inwj6o2h6943',
     file: '/certificates/claude-101.png',
     color: 'from-amber-500 to-orange-600',
+    category: 'agents',
   },
   {
     name: 'Claude Code 101',
     href: 'https://verify.skilljar.com/c/imrn5b37nis4',
     file: '/certificates/claude-code-101.png',
     color: 'from-indigo-500 to-purple-600',
+    category: 'agents',
   },
   {
     name: 'Introduction to Agent Skills',
     href: 'https://verify.skilljar.com/c/t42oq8g6qeep',
     file: '/certificates/introduction-to-agent-skills.png',
     color: 'from-rose-500 to-pink-600',
+    category: 'agents',
   },
   {
     name: 'Introduction to Model Context Protocol',
     href: 'https://verify.skilljar.com/c/a2u7dqaijdij',
     file: '/certificates/introduction-to-model-context-protocol.png',
     color: 'from-cyan-500 to-blue-600',
+    category: 'agents',
   },
 ]
 
@@ -177,7 +190,7 @@ export const SOCIAL_LINKS = [
   {
     label: 'GitHub',
     href: 'https://github.com/MHKaungPyae',
-    path: 'M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z',
+    path: GITHUB_PATH,
   },
   {
     label: 'LinkedIn',

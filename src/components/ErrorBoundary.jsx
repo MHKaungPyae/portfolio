@@ -14,6 +14,10 @@ export default class ErrorBoundary extends Component {
     return { hasError: true, error }
   }
 
+  componentDidCatch(error, errorInfo) {
+    console.error('ErrorBoundary caught:', error, errorInfo)
+  }
+
   render() {
     if (this.state.hasError) {
       return (
@@ -25,11 +29,11 @@ export default class ErrorBoundary extends Component {
             </p>
             <button
               onClick={() => window.location.reload()}
-              className="px-6 py-2 rounded-xl bg-gradient-to-r from-blue-600 to-blue-700 text-white font-semibold hover:from-blue-500 hover:to-blue-600 transition-all"
+              className="px-6 py-2 rounded-xl bg-primary text-white font-semibold hover:bg-primary-dark transition-all"
             >
               Refresh Page
             </button>
-            {this.props.showError && this.state.error && (
+            {this.state.error?.message && (
               <pre className="mt-4 text-xs text-gray-500 text-left overflow-auto max-h-32">
                 {this.state.error.message}
               </pre>
