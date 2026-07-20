@@ -72,10 +72,3 @@ npm install
 npm run dev       # Dev server at http://localhost:5173
 npm run build     # Production build → dist/
 ```
-
-## 📬 Contact
-
-- **Email:** mhkp765@gmail.com
-- **GitHub:** [MHKaungPyae](https://github.com/MHKaungPyae)
-- **LinkedIn:** [mh-kaung-pyae](https://www.linkedin.com/in/mh-kaung-pyae)
-- **Facebook:** [PandaHasNothingToSay](https://www.facebook.com/PandaHasNothingToSay)
