@@ -6,14 +6,6 @@ export const NAV_ITEMS = [
   { label: 'Contact', href: '#contact' },
 ]
 
-export const SKILLS = [
-  { name: 'Flutter', level: 85, color: '#02569B' },
-  { name: 'Python', level: 80, color: '#3776AB' },
-  { name: 'React', level: 75, color: '#61DAFB' },
-  { name: 'Machine Learning', level: 75, color: '#FF6F00' },
-  { name: 'Dart', level: 80, color: '#0175C2' },
-]
-
 export const PROJECTS = [
   {
     title: 'TripNest (User App)',
