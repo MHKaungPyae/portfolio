@@ -44,6 +44,7 @@ export default function Navbar() {
         <button
           onClick={() => setIsMenuOpen(!isMenuOpen)}
           className="md:hidden relative z-20 p-2"
+          aria-expanded={isMenuOpen}
           aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
         >
           <div className="w-6 h-0.5 bg-gray-400 mb-1.5 transition-transform duration-300 rounded-full" />
