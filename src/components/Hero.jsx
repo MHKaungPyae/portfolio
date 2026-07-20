@@ -3,6 +3,7 @@ import { SocialIcon, ScrollArrow } from '../icons'
 import Button from './ui/Button'
 import profileImg from '../assets/profile.jpg'
 import { useState } from 'react'
+import { Download } from 'lucide-react'
 
 export default function Hero() {
   const [imgError, setImgError] = useState(false)
@@ -53,6 +54,9 @@ export default function Hero() {
               </Button>
               <Button href="#contact" variant="outline" size="lg">
                 Contact Me
+              </Button>
+              <Button href="/resume.pdf" variant="outline" size="lg" download icon={<Download className="w-5 h-5" />}>
+                Download CV
               </Button>
             </div>
           </div>
