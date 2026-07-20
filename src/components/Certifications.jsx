@@ -8,7 +8,7 @@ import { CertificateIcon } from '../icons'
 const CERT_CATEGORIES = [
   { id: 'all', label: 'All', icon: Code2 },
   { id: 'python', label: 'Python', icon: Braces },
-  { id: 'ml', label: 'Machine Learning', icon: BrainCircuit },
+  { id: 'ml', label: 'ML/DL', icon: BrainCircuit },
   { id: 'agents', label: 'AI Agents', icon: Bot },
   { id: 'tools', label: 'Tools', icon: Wrench },
 ]
