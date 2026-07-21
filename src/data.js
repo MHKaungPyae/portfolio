@@ -155,6 +155,13 @@ export const CERTIFICATIONS = [
     category: 'python',
   },
   {
+    name: 'Using Databases with Python',
+    href: 'https://www.coursera.org/account/accomplishments/records/BUSMKYWQANZC',
+    file: '/certificates/using-databases-with-python.webp',
+    color: 'from-cyan-500 to-blue-600',
+    category: 'python',
+  },
+  {
     name: 'Introduction to Subagents',
     href: 'https://verify.skilljar.com/c/v9rdfcnv32kg',
     file: '/certificates/introduction-to-subagents.webp',
